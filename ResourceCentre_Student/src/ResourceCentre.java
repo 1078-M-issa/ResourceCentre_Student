@@ -159,15 +159,15 @@ public class ResourceCentre {
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
-<<<<<<< HEAD
+
 		ResourceCentre.setHeader("CAMCORDER LIST");
 		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
 				"AVAILABLE", "DUE DATE","OS");	
 		output += retrieveAllChromebook(chromebookList);
-=======
 
-		String output = retrieveAllChromebook(chromebookList);
->>>>>>> branch 'master' of https://github.com/1078-M-issa/ResourceCentre_Student
+
+		output = retrieveAllChromebook(chromebookList);
+
 		System.out.println(output);
 	}
 
