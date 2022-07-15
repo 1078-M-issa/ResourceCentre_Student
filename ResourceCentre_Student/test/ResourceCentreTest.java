@@ -209,11 +209,19 @@ public class ResourceCentreTest {
 
 		// boundary
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
-		ResourceCentre.addCamcorder(camcorderList, cc1);
+		ResourceCentre.addChromebook(chromebookList, cb1);
 
 		// error
-		Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
-		assertFalse("Test if available camcorder CC0011 is returned -false?", isReturned);
+		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
+		assertFalse("Test if available camcorder CB0011 is returned -false?", isReturned);
+		
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		cb2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		assertTrue("Test if loaned out amcorder CB0012 is returned- true", isReturned);
+		
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
+		assertFalse("Test if non-existing amcorder CB0013 is returned - false?", isReturned);
 	}
 
 	@After
